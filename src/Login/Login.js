@@ -4,7 +4,7 @@ import {FaGoogle} from 'react-icons/fa'
 import axios from 'axios'
 import { toast } from 'react-toastify'
 import { useCookies } from 'react-cookie'
-const url = 'http://localhost:7000/api/user/login';
+const url = 'https://backend-cc3t.onrender.com/login';
 
 const Login = () => {
     const [email, setEmail] = useState('')

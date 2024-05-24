@@ -4,7 +4,7 @@ import { FaGoogle } from 'react-icons/fa';
 import axios from 'axios';
 import { toast } from 'react-toastify';
 import { Link } from 'react-router-dom';
-const url = 'http://localhost:7000/api/user/register';
+const url = 'https://backend-cc3t.onrender.com/register';
 const Register = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
