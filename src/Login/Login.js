@@ -4,7 +4,7 @@ import {FaGoogle} from 'react-icons/fa'
 import axios from 'axios'
 import { toast } from 'react-toastify'
 import { useCookies } from 'react-cookie'
-
+const url = 'http://localhost:7000/api/user/login';
 
 const Login = () => {
     const [email, setEmail] = useState('')
@@ -15,7 +15,7 @@ const Login = () => {
     e.preventDefault()
     const userdata={email,password}
     try {
-       axios.post('http://localhost:7000/api/user/login',userdata)
+       axios.post(url,userdata)
        .then((response)=>{
         if(response.status===200) {
           setCookie('access_token',response.data.token)
@@ -34,7 +34,6 @@ const Login = () => {
     setPassword('')
 
   }
-  
   return (
     <section>
         <div className='container'>
@@ -44,13 +43,13 @@ const Login = () => {
                <input type="email" placeholder="Email"  onChange={(e)=>setEmail(e.target.value)} value={email}/>
                <input type="password" placeholder="password"  onChange={(e)=>setPassword(e.target.value)} value={password} />
                <div className='link'>
-                   {/* <Link to ="/reset">Reset password</Link> */}
+                   <Link to ="/reset">Reset password</Link>
                   <button className='--btn --btn-primary --btn-block ' type='submit'>Login</button>
                </div>
                <p>--- or ---</p>
                <button className='--btn --btn-primary --btn-block'>
                <FaGoogle color="#fff"/> Login with Goggle 
-           </button>
+                </button>
            </form>
            
            <span className='register'><p>Dont have an account?</p>
